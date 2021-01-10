@@ -1,8 +1,19 @@
-// function computerChoice() {
-//     let computerChoice = Math.floor(Math.random() * 3);
-//     let rpsArray = ["rock", "paper", "scissors"];
-    
-//     return rpsArray[computerChoice];
+function computerChoice() {
+    let computerChoice = Math.floor(Math.random() * 3);
+    let rpsArray = ["Rock", "Paper", "Scissors"];
+    return rpsArray[computerChoice];
+}
+
+function computerImg() {
+    let computerChoiceDiv = document.querySelector(".computerChoice");
+    let computerStr = computerChoice();
+    computerChoiceDiv.setAttribute("style", `background-image: url(/img/${computerStr}.jpg);`);
+}
+
+
+// function computerChoiceImg() {
+//     let computerChoice = document.querySelector(".computerChoice");
+//     document.querySelector(".chooseScissors").addEventListener("click", () => chooseFrom("Scissors"))
 // }
 
 // function playRound(playerSelection, computerSelection) {
@@ -54,24 +65,14 @@
 
 //game();
 
-const rockButton = document.querySelector(".chooseRock").addEventListener("click", rockFunction);
-const paperButton = document.querySelector(".choosePaper").addEventListener("click", paperFunction);
-const scissorsButton = document.querySelector(".chooseScissors").addEventListener("click", scissorsFunction);
+document.querySelector(".chooseRock").addEventListener("click", () => chooseFrom("Rock"));
+document.querySelector(".choosePaper").addEventListener("click", () => chooseFrom("Paper"));
+document.querySelector(".chooseScissors").addEventListener("click", () => chooseFrom("Scissors"));
 
-function rockFunction() {
+
+
+function chooseFrom(str) {
     let playerChoice = document.querySelector(".playerChoice");
-    playerChoice.setAttribute("style", "background-image: url(/img/Rock.jpg);")
-}
-
-function paperFunction() {
-    let playerChoice = document.querySelector(".playerChoice");
-    playerChoice.setAttribute("style", "background-image: url(/img/Paper.jpg);")
-}
-
-function scissorsFunction() {
-    let playerChoice = document.querySelector(".playerChoice");
-    playerChoice.setAttribute("style", "background-image: url(/img/Scissors.jpg);")
-}
-
-
-
+    playerChoice.setAttribute("style", `background-image: url(/img/${str}.jpg);`);
+    computerImg();
+ }
