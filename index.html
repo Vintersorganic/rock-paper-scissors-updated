@@ -63,9 +63,9 @@
                 text-align: center;
             }
 
-            #playerChoice, #computerChoice {
-                width: 160px;
-                height: 160px;
+            .playerChoice, .computerChoice {
+                width: 140px;
+                height: 140px;
                 border: 2px solid white;
                 border-radius: 4px;
             }
@@ -73,6 +73,11 @@
             .score {
                 display: flex;
                 flex-direction: column;
+            }
+
+            .playerChoice { 
+               background-repeat: no-repeat;
+               background-size: 100% 100%;
             }
 
         </style>
@@ -84,13 +89,14 @@
             <h5>Score: 5</h5>
             <div class="displayBox">
                 <h5>Humanoid Player</h5>
-                <div id="playerChoice">
+                <div class="playerChoice">
+                    
                 </div>
             </div>
 
             <div class="displayBox">
                 <h5>Human Computer</h5>
-                <div id="computerChoice">
+                <div class="computerChoice">
                 </div>
             </div>
             <h5>Score: 5</h5>
@@ -107,7 +113,7 @@
             </div>  
             <div class="Paper choiceBox">
                 <h4>Paper</h4>
-                <img src="img/Paper.jpg" class="chooseRock"> 
+                <img src="img/Paper.jpg" class="choosePaper"> 
             </div>
         </div>
         

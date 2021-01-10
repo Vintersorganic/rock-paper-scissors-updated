@@ -54,7 +54,24 @@
 
 //game();
 
-const rockButton = document.querySelector(".chooseRock");
-const paperButton = document.querySelector(".choosePaper");
-const rockScissors = document.querySelector(".chooseScissors");
+const rockButton = document.querySelector(".chooseRock").addEventListener("click", rockFunction);
+const paperButton = document.querySelector(".choosePaper").addEventListener("click", paperFunction);
+const scissorsButton = document.querySelector(".chooseScissors").addEventListener("click", scissorsFunction);
+
+function rockFunction() {
+    let playerChoice = document.querySelector(".playerChoice");
+    playerChoice.setAttribute("style", "background-image: url(/img/Rock.jpg);")
+}
+
+function paperFunction() {
+    let playerChoice = document.querySelector(".playerChoice");
+    playerChoice.setAttribute("style", "background-image: url(/img/Paper.jpg);")
+}
+
+function scissorsFunction() {
+    let playerChoice = document.querySelector(".playerChoice");
+    playerChoice.setAttribute("style", "background-image: url(/img/Scissors.jpg);")
+}
+
+
 
