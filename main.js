@@ -8,6 +8,7 @@ function computerImg() {
     let computerChoiceDiv = document.querySelector(".computerChoice");
     let computerStr = computerChoice();
     computerChoiceDiv.setAttribute("style", `background-image: url(./img/${computerStr}.jpg);`);
+    return computerStr;
 }
 
 document.querySelector(".chooseRock").addEventListener("click", () => chooseFrom("Rock"));
@@ -19,8 +20,16 @@ document.querySelector(".chooseScissors").addEventListener("click", () => choose
 function chooseFrom(str) {
     let playerChoice = document.querySelector(".playerChoice");
     playerChoice.setAttribute("style", `background-image: url(./img/${str}.jpg);`);
-    computerImg();
  }
+
+ let rock = document.querySelector(".chooseRock").addEventListener("click", () => returnChoice("Rock"));
+ let paper = document.querySelector(".choosePaper").addEventListener("click", () => returnChoice("Paper"));
+ let scissors = document.querySelector(".chooseScissors").addEventListener("click", () => returnChoice("Scissors"));
+
+ function returnChoice(str) {
+     return str;
+ }
+
 
 // function computerChoiceImg() {
 //     let computerChoice = document.querySelector(".computerChoice");
@@ -50,28 +59,33 @@ function chooseFrom(str) {
 //     else return "You draw";
 // }
 
-// function game() {
-//     let playerCount = 0;
-//     let computerCount = 0;
-//     for (let i=0; i<5;i++){
-//         let result = playRound(prompt("rock, paper or scisssors"), computerChoice());
-//         alert(result);
-//         if (result[4] === "w") {
-//             playerCount++
-//         }
-//         else if (result[4] === "l") {
-//             computerCount++
-//         }
-//         alert(`Player ${playerCount} - Computer ${computerCount}`);
-//     }
+function game() {
+        let playerCount = 0;
+        let computerCount = 0;
+        let playerScore = document.querySelector("#playerScore");
+        let computerScore = document.querySelector("#computerScore");
+        for (let i=0; i<5;i++){
+            let resultHuman = sad;
+            let resultComputer = computerImg();
 
-//     if (playerCount > computerCount) {
-//         alert(`Player won ${playerCount} to ${computerCount}`);
-//     }
-//     else if (playerCount < computerCount) {
-//         alert(`Player lost ${playerCount} to ${computerCount}`);
-//     }
-//     else alert("You draw!");
-// }
+            if (resultHuman === "Rock" && resultComputer == "Scissors"||resultHuman === "Paper" && resultComputer == "Rock"|| 
+                        resultHuman === "Scissors" && resultComputer == "Paper") {
+                playerScore.textContent = playerCount++;
+                }
+            else if (resultHuman === "Rock" && resultComputer == "Paper"||resultHuman === "Paper" && resultComputer == "Scissors"|| 
+                        resultHuman === "Scissors" && resultComputer == "Rock") {
+                computerScore.textContent = computerCount++;
+                }
+        
+    }
+
+    if (playerCount > computerCount) {
+        alert(`Player won ${playerCount} to ${computerCount}`);
+    }
+    else if (playerCount < computerCount) {
+        alert(`Player lost ${playerCount} to ${computerCount}`);
+    }
+    else alert("You draw!");
+}
 
 //game();
