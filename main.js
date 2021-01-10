@@ -7,7 +7,7 @@ function computerChoice() {
 function computerImg() {
     let computerChoiceDiv = document.querySelector(".computerChoice");
     let computerStr = computerChoice();
-    computerChoiceDiv.setAttribute("style", `background-image: url(img/${computerStr}.jpg);`);
+    computerChoiceDiv.setAttribute("style", `background-image: url(./img/${computerStr}.jpg);`);
 }
 
 document.querySelector(".chooseRock").addEventListener("click", () => chooseFrom("Rock"));
@@ -18,7 +18,7 @@ document.querySelector(".chooseScissors").addEventListener("click", () => choose
 
 function chooseFrom(str) {
     let playerChoice = document.querySelector(".playerChoice");
-    playerChoice.setAttribute("style", `background-image: url(img/${str}.jpg);`);
+    playerChoice.setAttribute("style", `background-image: url(./img/${str}.jpg);`);
     computerImg();
  }
 
