@@ -7,9 +7,20 @@ function computerChoice() {
 function computerImg() {
     let computerChoiceDiv = document.querySelector(".computerChoice");
     let computerStr = computerChoice();
-    computerChoiceDiv.setAttribute("style", `background-image: url(/img/${computerStr}.jpg);`);
+    computerChoiceDiv.setAttribute("style", `background-image: url(img/${computerStr}.jpg);`);
 }
 
+document.querySelector(".chooseRock").addEventListener("click", () => chooseFrom("Rock"));
+document.querySelector(".choosePaper").addEventListener("click", () => chooseFrom("Paper"));
+document.querySelector(".chooseScissors").addEventListener("click", () => chooseFrom("Scissors"));
+
+
+
+function chooseFrom(str) {
+    let playerChoice = document.querySelector(".playerChoice");
+    playerChoice.setAttribute("style", `background-image: url(img/${str}.jpg);`);
+    computerImg();
+ }
 
 // function computerChoiceImg() {
 //     let computerChoice = document.querySelector(".computerChoice");
@@ -64,15 +75,3 @@ function computerImg() {
 // }
 
 //game();
-
-document.querySelector(".chooseRock").addEventListener("click", () => chooseFrom("Rock"));
-document.querySelector(".choosePaper").addEventListener("click", () => chooseFrom("Paper"));
-document.querySelector(".chooseScissors").addEventListener("click", () => chooseFrom("Scissors"));
-
-
-
-function chooseFrom(str) {
-    let playerChoice = document.querySelector(".playerChoice");
-    playerChoice.setAttribute("style", `background-image: url(/img/${str}.jpg);`);
-    computerImg();
- }
