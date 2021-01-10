@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-image: url("img/dark-honeycomb.png");
+                background-repeat: repeat;
+                color: white;
+                background-size: 200px;
+            }
+            .choicesDisplay { 
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .displayBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 200px;
+                height: 200px;
+            }
+
+            .choicesContainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            img {
+                width: 30%;
+                border: 1.5px solid white;
+                border-radius: 6px;
+            }
+
+            img:hover {
+                cursor: pointer;
+                transform:scale(1.1);
+                opacity: 0.8;
+                border-color: darkgoldenrod;
+            }
+
+            .choiceBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h4, h2 {
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+            #playerChoice, #computerChoice {
+                width: 160px;
+                height: 160px;
+                border: 2px solid white;
+                border-radius: 4px;
+            }
+
+            .score {
+                display: flex;
+                flex-direction: column;
+            }
+
+        </style>
+    </head>
+    <body> 
+        <h2>Preprare yourself for Rock, Paper & Scissors!</h2>
+
+        <div class="choicesDisplay">
+            <h5>Score: 5</h5>
+            <div class="displayBox">
+                <h5>Humanoid Player</h5>
+                <div id="playerChoice">
+                </div>
+            </div>
+
+            <div class="displayBox">
+                <h5>Human Computer</h5>
+                <div id="computerChoice">
+                </div>
+            </div>
+            <h5>Score: 5</h5>
+        </div>
+
+        <div class="choicesContainer">
+            <div class="Rock choiceBox">
+                <h4>Rock</h4>
+                <img src="img/Rock.jpg" class="chooseRock">
+            </div>
+            <div class="Scissors choiceBox">
+                <h4>Scissors</h4>
+                <img src="img/Scissors.jpg" class="chooseScissors">
+            </div>  
+            <div class="Paper choiceBox">
+                <h4>Paper</h4>
+                <img src="img/Paper.jpg" class="chooseRock"> 
+            </div>
+        </div>
+        
+        <script src="./main.js" async defer></script>
+    </body>
+</html>
